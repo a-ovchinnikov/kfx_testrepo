@@ -17,7 +17,7 @@ spec:
             ]
           }
   tasks:
-      - name: task-1
+  - name: task-1
     description: Placeholder task that prints the Snapshot and outputs standard TEST_OUTPUT
     params:
       - name: SNAPSHOT
