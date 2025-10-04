@@ -7,3 +7,16 @@ spec:
     - description: 'Description'
       name: SNAPSHOT
       type: string
+  tasks:
+    - name: task-1
+      description: A dummy task
+      taskSpec:
+        results:
+          - name: TEST_OUTPUT
+            description: some output value
+        steps:
+          - name: the-very-first-step
+            image: registry.redhat.io/openshift4/ose-cli:latest
+            script: |
+              #!/bin/bash
+              echo "Probably works"
