@@ -30,3 +30,4 @@ spec:
             script: |
               #!/usr/bin/bash
               echo "Did something"
+              TEST_OUTPUT="foobar"
