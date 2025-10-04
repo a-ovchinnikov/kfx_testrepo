@@ -6,14 +6,10 @@ spec:
   params:
     - description: 'Snapshot of the application'
     - name: SNAPSHOT
-      default: '{"components": [{"name":"test-app", "containerImage": "quay.io/example/repo:latest"}]}'
       type: string
   tasks:
     - name: task-1
       description: Placeholder task that prints the Snapshot and outputs standard TEST_OUTPUT
-      params:
-        - name: SNAPSHOT
-          value: $(params.SNAPSHOT)
       taskSpec:
         params:
         - name: SNAPSHOT
@@ -24,13 +20,7 @@ spec:
         - name: test-snapshot-component
           image: registry.redhat.io/openshift4/ose-cli:latest
           workingDir: /workspace
-          env:
-          - name: SNAPSHOT
-            value: $(params.SNAPSHOT)
           script: |
             #!/bin/bash
             set -e
-
             echo -e "Example test task for the Snapshot:\n ${SNAPSHOT}"
-            # After the tests finish, record the overall result in the RESULT variable
-            RESULT="SUCCESS"
