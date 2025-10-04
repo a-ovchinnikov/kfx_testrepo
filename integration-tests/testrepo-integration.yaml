@@ -4,7 +4,7 @@ metadata:
   name: testrepo-integration-test
 spec:
   params:
-    - description: 'Description'
+    - description: 'Description longer'
       name: SNAPSHOT
       type: string
   tasks:
