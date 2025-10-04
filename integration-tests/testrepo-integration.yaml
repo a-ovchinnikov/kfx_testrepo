@@ -4,18 +4,10 @@ metadata:
   name: example-pipeline
 spec:
   params:
+    - description: 'Snapshot of the application'
     - name: SNAPSHOT
-      type: string
       default: '{"components": [{"name":"test-app", "containerImage": "quay.io/example/repo:latest"}]}'
-      description: |
-        For simplicity, we expect a single component inside our snapshot
-          {
-            "components": [
-              {
-                "containerImage": "quay.io/example/repo:latest"
-              }
-            ]
-          }
+      type: string
   tasks:
     - name: task-1
       description: Placeholder task that prints the Snapshot and outputs standard TEST_OUTPUT
