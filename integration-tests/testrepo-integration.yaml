@@ -2,3 +2,8 @@ apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
   name: example-pipeline
+spec:
+  params:
+    - description: 'Description'
+      name: SNAPSHOT
+      type: string
