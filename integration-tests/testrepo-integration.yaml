@@ -32,3 +32,4 @@ spec:
               echo "Did something"
               sleep 21
               TEST_OUTPUT="foobar"
+              exit 1
