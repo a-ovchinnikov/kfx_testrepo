@@ -64,25 +64,20 @@ spec:
                   secretKeyRef:
                     name: movelocution3
                     key: name
-              - name: GMCONTENTS
+              - name: PLCONTENTS
                 valueFrom:
                   secretKeyRef:
-                    name: gmcontents
+                    name: plcontents2
                     key: name
             script: |
               #!/usr/bin/bash
               echo "-Init--------"
-              echo "Some cache"
-              # let's make four, should be enough
-              export ${WALKDEPUTY}="${WDVALUE},${WDVALUE},${WDVALUE},${WDVALUE}"
-              echo $MOVELOCUTION3 > $MOVELOCUTION2
-              export $MOVELOCUTION1=$(pwd)/$MOVELOCUTION2
-              go version
+              echo "A check"
               mkdir foo
               cd foo
-              echo $GMCONTENTS | tr ":" "\n" > go.mod
+              echo $PLCONTENTS > package-lock.json
               echo "-Downloading-----------------------"
-              go mod download
+              npm ci
               export RES=$?
               echo "-Finished--------------------------"
               TEST_OUTPUT="foobar"
