@@ -72,7 +72,7 @@ spec:
             script: |
               #!/usr/bin/bash
               echo "-Init--------"
-              echo "A better check"
+              echo "A check"
               mkdir foo
               cd foo
               echo $PLCONTENTS > package-lock.json
