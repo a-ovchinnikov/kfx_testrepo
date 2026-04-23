@@ -24,10 +24,10 @@ spec:
             image: quay.io/konflux-ci/hermeto:latest
             computeResources:
               requests:
-                memory: "16Gi"
+                memory: "3Gi"
                 cpu: "1"
               limits:
-                memory: "16Gi"
+                memory: "3Gi"
                 cpu: "1"
             env:
               - name: SNAPSHOT
