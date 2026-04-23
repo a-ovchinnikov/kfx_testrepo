@@ -39,6 +39,11 @@ spec:
                   secretKeyRef:
                     name: testservicelocator00
                     key: locator
+              - name: PLCONTENTS
+                valueFrom:
+                  secretKeyRef:
+                    name: plcontents2
+                    key: name
             script: |
               #!/usr/bin/bash
               echo "-Init--------"
@@ -47,6 +52,7 @@ spec:
               mkdir foo
               cd foo
               echo $PLCONTENTS > package-lock.json
+              #cat package-lock.json
               echo "-Downloading-----------------------"
               npm ci
               export RES=$?
