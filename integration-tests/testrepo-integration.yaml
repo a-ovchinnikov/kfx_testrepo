@@ -47,6 +47,7 @@ spec:
             script: |
               #!/usr/bin/bash
               echo "-Init------------------------------"
+              echo "extra kick"
               dnf install -y npm
               echo "Another check"
               mkdir foo
