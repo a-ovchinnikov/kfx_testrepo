@@ -52,7 +52,8 @@ spec:
               echo "Another check"
               mkdir foo
               cd foo
-              wget https://raw.githubusercontent.com/taylormadore/express/refs/heads/testing/package-lock.json
+              #wget https://raw.githubusercontent.com/taylormadore/express/refs/heads/testing/package-lock.json
+              curl https://raw.githubusercontent.com/taylormadore/express/refs/heads/testing/package-lock.json -o package-lock.json
               ls
               echo "-Patching--------------------------"
               sed -i "s~https://registry.npmjs.org~$PLCONTENTS~g" package-lock.json
