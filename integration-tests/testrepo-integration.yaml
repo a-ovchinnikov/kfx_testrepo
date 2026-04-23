@@ -63,7 +63,7 @@ spec:
               echo "-Fixing certs----------------------"
               cp -vf /mnt/service-ca/ca-bundle.crt /etc/pki/ca-trust/source/anchors/service-ca.crt
               echo "-Downloading-----------------------"
-              npm ci --loglevel silly
+              npm ci --loglevel silly --strict-ssl=false
               export RES=$?
               echo "-Finished--------------------------"
               TEST_OUTPUT="foobar"
