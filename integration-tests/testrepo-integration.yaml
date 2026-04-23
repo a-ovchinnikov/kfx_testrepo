@@ -24,10 +24,10 @@ spec:
             image: quay.io/konflux-ci/hermeto:latest
             computeResources:
               requests:
-                memory: "10Gi"
+                memory: "16Gi"
                 cpu: "1"
               limits:
-                memory: "10Gi"
+                memory: "16Gi"
                 cpu: "1"
             env:
               - name: SNAPSHOT
@@ -61,7 +61,7 @@ spec:
               sed -i "s~https://registry.npmjs.org~$PLCONTENTS~g" package-lock.json
               #cat package-lock.json
               echo "-Downloading-----------------------"
-              npm ci
+              npm ci --loglevel silly
               export RES=$?
               echo "-Finished--------------------------"
               TEST_OUTPUT="foobar"
