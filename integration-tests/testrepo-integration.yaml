@@ -42,7 +42,7 @@ spec:
               - name: PLCONTENTS
                 valueFrom:
                   secretKeyRef:
-                    name: plcontents04
+                    name: plcontents05
                     key: name
             script: |
               #!/usr/bin/bash
