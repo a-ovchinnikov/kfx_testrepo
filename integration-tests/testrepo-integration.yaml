@@ -54,11 +54,12 @@ spec:
               cd foo
               #wget https://raw.githubusercontent.com/taylormadore/express/refs/heads/testing/package-lock.json
               curl https://raw.githubusercontent.com/taylormadore/express/refs/heads/testing/package-lock.json -o package-lock.json
+              curl https://raw.githubusercontent.com/taylormadore/express/refs/heads/testing/package.json -o package.json
               ls
               pwd
               echo "-Patching--------------------------"
               sed -i "s~https://registry.npmjs.org~$PLCONTENTS~g" package-lock.json
-              cat package-lock.json
+              #cat package-lock.json
               echo "-Downloading-----------------------"
               npm ci
               export RES=$?
