@@ -42,6 +42,7 @@ spec:
             script: |
               #!/usr/bin/bash
               echo "-Init--------"
+              dnf install -y npm
               echo "Another check"
               mkdir foo
               cd foo
